@@ -3,7 +3,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const signup = async(req, res) => {
+
     try{
+     console.log("req from the Controller>>",req);
        const { name, email, password } = req.body;
        const user = await userModel.findOne({email});
        if(user){
@@ -24,7 +26,7 @@ const signup = async(req, res) => {
     const login = async(req, res) => {
         
         try{
-            console.log("req>>",req);
+            // console.log("req>>",req);
            const {  email, password } = req.body;
            const user = await userModel.findOne({email});
            const errorMsg="Authentication failed! email or password is wrong.";

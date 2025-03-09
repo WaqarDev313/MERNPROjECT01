@@ -6,6 +6,8 @@ const AuthRouter = require("./Routes/AuthRouter");
 
 require("dotenv").config();
 require("./Models/db");
+require("./Models/Task");
+require("./Models/TaskAssignment");
 
 const PORT = process.env.PORT || 8000;
 app.get("/ping",(req,res)=>{
